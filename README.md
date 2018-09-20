@@ -1,4 +1,4 @@
-# hello-world
-See on test, selleks et saada aru kuidas siin kõik käib.
+# Limp Biscuit
+Veebirakenduste loomise aine meeskond
 
 Grupi liikmed: Vladislav Paskevits, Aleks Kozajev, Anette Jaakson
