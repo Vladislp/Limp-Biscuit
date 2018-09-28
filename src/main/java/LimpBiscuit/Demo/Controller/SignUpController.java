@@ -13,7 +13,7 @@ public class SignUpController {
     @RequestMapping("/signup")
     public String index(Model model) {
         model.addAttribute("text", "Hello");
-        return "signup";
+        return "SignUp";
     }
 
 //    @RequestMapping(value="/signup", method= RequestMethod.GET)
