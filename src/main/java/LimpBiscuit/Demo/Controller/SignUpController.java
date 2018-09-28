@@ -10,23 +10,23 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class SignUpController {
 
-    @RequestMapping("/signup")
-    public String index(Model model) {
-        model.addAttribute("text", "Hello");
+//    @RequestMapping("/signup")
+//    public String index(Model model) {
+//        model.addAttribute("text", "Hello");
+//        return "SignUp";
+//    }
+
+    @RequestMapping(value="/signup", method= RequestMethod.GET)
+    public String signupForm(Model model) {
+        model.addAttribute("user", new User());
         return "SignUp";
     }
 
-//    @RequestMapping(value="/signup", method= RequestMethod.GET)
-//    public String signupForm(Model model) {
-//        model.addAttribute("user", new User());
-//        return "signup";
-//    }
-
-//    @PostMapping("/signup")
-//    public String signupSubmit(@ModelAttribute User user) {
-//        if(user.getPassword().equals(user.getPassword_repeat())){
-//            return "signupsuccess";
-//        }
-//        return "signup";
-//    }
+    @PostMapping("/signup")
+    public String signupSubmit(@ModelAttribute User user) {
+        if(user.getPassword().equals(user.getPassword_repeat())){
+            return "SignupSuccess";
+        }
+        return "SignUp";
+    }
 }
