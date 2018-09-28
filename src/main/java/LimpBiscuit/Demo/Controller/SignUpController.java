@@ -10,21 +10,10 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class SignUpController {
 
-//    @RequestMapping(value="/signup", method= RequestMethod.GET)
-//    public ModelAndView getSignupForm() {
-//        ModelAndView model = new ModelAndView("Signup");
-//
-//        return model;
-//    }
-//
-//    @RequestMapping(value="/SignupSubmit", method= RequestMethod.POST)
-//    public ModelAndView submitSignupForm(@RequestParam("email") String email, @RequestParam("psw") String password,
-//            @RequestParam("psw-repeat") String password_repeat) {
-//
-//        ModelAndView model = new ModelAndView("SignupSuccess");
-//        model.addObject("msg", ""+email + " "+password);
-//
-//        return model;
+//    @RequestMapping("/signup")
+//    public String index(Model model) {
+//        model.addAttribute("text", "Hello");
+//        return "signup";
 //    }
 
     @RequestMapping(value="/signup", method= RequestMethod.GET)
@@ -33,11 +22,11 @@ public class SignUpController {
         return "signup";
     }
 
-    @PostMapping("/signup")
-    public String signupSubmit(@ModelAttribute User user) {
-        if(user.getPassword().equals(user.getPassword_repeat())){
-            return "signupsuccess";
-        }
-        return "signup";
-    }
+//    @PostMapping("/signup")
+//    public String signupSubmit(@ModelAttribute User user) {
+//        if(user.getPassword().equals(user.getPassword_repeat())){
+//            return "signupsuccess";
+//        }
+//        return "signup";
+//    }
 }
