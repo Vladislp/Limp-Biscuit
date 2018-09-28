@@ -10,12 +10,6 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class SignUpController {
 
-//    @RequestMapping("/signup")
-//    public String index(Model model) {
-//        model.addAttribute("text", "Hello");
-//        return "SignUp";
-//    }
-
     @RequestMapping(value="/signup", method= RequestMethod.GET)
     public String signupForm(Model model) {
         model.addAttribute("user", new User());
