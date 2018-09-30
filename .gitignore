@@ -25,3 +25,6 @@ target
 /dist/
 /nbdist/
 /.nb-gradle/
+
+### Ignore config files ###
+src/main/java/resources/application.properties

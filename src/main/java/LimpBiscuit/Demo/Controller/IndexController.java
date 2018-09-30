@@ -1,22 +1,27 @@
 package LimpBiscuit.Demo.Controller;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class IndexController {
-
-    @RequestMapping("/")
-    public String index(Model model) {
-        model.addAttribute("text", "Hello");
+    @GetMapping("/")
+    public String index() {
         return "Index";
     }
 
-    @RequestMapping("/about")
-    public String about(Model model) {
-        model.addAttribute("text", "Hello");
+    @GetMapping("/home")
+    public String home() {
+        return "Home";
+    }
+
+    @GetMapping("/about")
+    public String about() {
         return "About";
+    }
+
+    @GetMapping("/contact")
+    public String contact() {
+        return "Contact";
     }
 }
