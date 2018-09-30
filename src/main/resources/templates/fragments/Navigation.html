@@ -13,19 +13,19 @@
         <ul class="navbar-nav">
             <li class="nav-item" th:classappend="${#execInfo.processedTemplateName == 'Home'} ? 'active' : ''">
                 <a class="nav-link" href="/home">
-                    <i class="fas fa-home fa-sm"></i> Home
+                    <em class="fas fa-home fa-sm"></em> Home
                 </a>
             </li>
 
             <li class="nav-item" th:classappend="${#execInfo.processedTemplateName == 'About'} ? 'active' : ''">
                 <a class="nav-link" href="/about">
-                    <i class="fas fa-info-circle fa-sm"></i> About us
+                    <em class="fas fa-info-circle fa-sm"></em> About us
                 </a>
             </li>
 
             <li class="nav-item" th:classappend="${#execInfo.processedTemplateName == 'Contact'} ? 'active' : ''">
                 <a class="nav-link" href="/contact">
-                    <i class="fas fa-at fa-sm"></i> Contact us
+                    <em class="fas fa-at fa-sm"></em> Contact us
                 </a>
             </li>
         </ul>
@@ -33,13 +33,13 @@
         <ul class="navbar-nav ml-auto">
             <li class="nav-item" th:classappend="${#execInfo.processedTemplateName == 'SignUp'} ? 'active' : ''">
                 <a class="nav-link" href="/signup">
-                    <i class="far fa-id-badge fa-sm"></i> Sign up
+                    <em class="far fa-id-badge fa-sm"></em> Sign up
                 </a>
             </li>
 
             <li class="nav-item" th:classappend="${#execInfo.processedTemplateName == 'Login'} ? 'active' : ''">
                 <a class="nav-link" href="/login">
-                    <i class="fas fa-sign-in-alt fa-sm"></i> Login
+                    <em class="fas fa-sign-in-alt fa-sm"></em> Login
                 </a>
             </li>
         </ul>
