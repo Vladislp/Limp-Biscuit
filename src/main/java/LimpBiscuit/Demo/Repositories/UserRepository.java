@@ -7,5 +7,6 @@ public interface UserRepository extends Repository<User, Long> {
     <S extends User> S save(S entity);
 
     Iterable<User> findAll();
-    Iterable<User> findAllByEmail(String email);
+    User findByEmail(String email);
+//    Iterable<User> findAllByEmail(String email);
 }

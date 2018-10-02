@@ -22,13 +22,20 @@ public class SignUpController {
     }
 
     @PostMapping("")
-    public String post(@RequestParam("email") String email, @RequestParam("password") String password) {
-        BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
-        String hash = passwordEncoder.encode(password);
+    public String post(@RequestParam("email") String email, @RequestParam("password") String password,
+                       @RequestParam("psw-repeat") String psw_repeat){
+        System.out.println("aaaa");
 
-        User user = new User(email, hash);
-        userRepository.save(user);
+        if(password.equals(psw_repeat)){
 
-        return "redirect:/home";
+            BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+            String hash = passwordEncoder.encode(password);
+
+            User user = new User(email, hash);
+            userRepository.save(user);
+
+            return "redirect:/home";
+        }
+        return "SignUp";
     }
 }
