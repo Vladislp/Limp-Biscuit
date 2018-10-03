@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="fragments/Head :: head"></head>
+
+<body>
+
+<nav th:replace="fragments/Navigation :: navigation"></nav>
+
+<div class="container margin-tb">
+    <h1 class="mb-4">Create</h1>
+
+    <form action="/create" method="post">
+        <div class="form-group">
+            <label for="title"><strong>Title</strong></label>
+            <input type="text" class="form-control" placeholder="Enter title" id="title" name="title" required>
+        </div>
+
+        <div class="form-group">
+            <label for="text"><strong>Text</strong></label>
+            <input type="text" class="form-control" placeholder="Enter text" id="text" name="text" required>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Create a routine</button>
+
+        <hr>
+
+    </form>
+</div>
+
+</body>
+</html>

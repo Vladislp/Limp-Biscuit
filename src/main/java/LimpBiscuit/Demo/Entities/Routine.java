@@ -13,26 +13,31 @@ public class Routine {
     private String title;
     @NotNull
     private String text;
-    @NotNull
+//    @NotNull
     private String color;
-    @NotNull
+//    @NotNull
     private boolean done;
-    @NotNull
+//    @NotNull
     private Date date;
-    @NotNull
+//    @NotNull
     private Date doneDate;
     @NotNull
     @ManyToOne
     private User user;
 
-    public Routine(int id, String title, String text, String color, boolean done, Date date, Date doneDate) {
-        this.id = id;
+    public Routine(String title, String text, String color, Date date, Date doneDate) {
         this.title = title;
         this.text = text;
         this.color = color;
-        this.done = done;
+        this.done = false;
         this.date = date;
         this.doneDate = doneDate;
+    }
+
+    public Routine(String title, String text) {
+        this.title = title;
+        this.text = text;
+        this.done = false;
     }
 
     public int getId() {

@@ -24,7 +24,6 @@ public class SignUpController {
     @PostMapping("")
     public String post(@RequestParam("email") String email, @RequestParam("password") String password,
                        @RequestParam("psw-repeat") String psw_repeat){
-        System.out.println("aaaa");
 
         if(password.equals(psw_repeat)){
 
