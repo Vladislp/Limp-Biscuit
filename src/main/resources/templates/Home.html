@@ -8,8 +8,66 @@
 
 <nav th:replace="fragments/Navigation :: navigation"></nav>
 
-<div class="container margin-tb">
-    Home
+<div>
+    <!--<h1>Congratulations</h1>-->
+    <!--&lt;!&ndash;<p th:text="${routine}" />&ndash;&gt;-->
+    <!--<c:forEach var="r" items="${routines}">-->
+        <!--<p th:text="${r}" />-->
+    <!--</c:forEach>-->
+
+    <table>
+        <thead>
+        <tr>
+            <th> Title </th>
+            <th> Text </th>
+            <th> Color </th>
+            <th> Done </th>
+            <th> Date </th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:if="${routines.empty}">
+            <td colspan="2"> No routines yet </td>
+        </tr>
+        <tr th:each="routine : ${routines}">
+            <td><span th:text="${routine.title}"> Title </span></td>
+            <td><span th:text="${routine.text}"> Text </span></td>
+            <td><span th:text="${routine.color}"> color </span></td>
+            <td><span th:text="${routine.done}"> done </span></td>
+            <td><span th:text="${routine.date}"> date </span></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<!--<div class="container margin-tb">-->
+    <!--Home-->
+<!--</div>-->
+
+<div>
+    <!--<script>-->
+        <!--function LoopTest() {-->
+            <!--var end =-->
+            <!--for (i=0;i<5;i++)-->
+            <!--{-->
+                <!--document.write('<p>' + i + '</p>'); // This writes the number in a paragraph-->
+            <!--}-->
+        <!--}-->
+    <!--</script>-->
+
+    <!--<script>-->
+
+        <!--var data = [];-->
+
+        <!--<c:forEach var="routine" items="${routines}">-->
+
+            <!--data.push(spring_data);-->
+
+        <!--</forEach>-->
+
+        <!--console.log(data);-->
+
+    <!--</script>-->
 </div>
 
 </body>
