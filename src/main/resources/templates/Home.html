@@ -23,9 +23,9 @@
     <!--<p th:text="${r}" />-->
     <!--</c:forEach>-->
 
-        <table>
+        <table class = "table">
             <thead>
-            <tr>
+            <tr class=" table-danger">
                 <th> Title</th>
                 <th> Text</th>
                 <th> Color</th>
@@ -34,15 +34,15 @@
             </tr>
             </thead>
             <tbody>
-            <tr th:if="${routines.empty}">
-                <td colspan="2"> No routines yet</td>
+            <tr class="table-danger" th:if="${routines.empty}">
+                <td class="table-danger" colspan="2"> No routines yet</td>
             </tr>
-            <tr th:each="routine : ${routines}">
-                <td><span th:text="${routine.title}"> Title </span></td>
-                <td><span th:text="${routine.text}"> Text </span></td>
-                <td><span th:text="${routine.color}"> color </span></td>
-                <td><span th:text="${routine.done}"> done </span></td>
-                <td><span th:text="${routine.date}"> date </span></td>
+            <tr class="table-danger" th:each="routine : ${routines}">
+                <td class="table-danger"><span th:text="${routine.title}"> Title </span></td>
+                <td class="table-danger"><span th:text="${routine.text}"> Text </span></td>
+                <td class="table-danger"><span th:text="${routine.color}"> color </span></td>
+                <td class="table-danger"><span th:text="${routine.done}"> done </span></td>
+                <td class="table-danger"><span th:text="${routine.date}"> date </span></td>
             </tr>
             </tbody>
         </table>
