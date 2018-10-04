@@ -32,6 +32,8 @@ public class CreateController {
         Routine routine = new Routine(title, text, color, now);
         routineRepository.save(routine);
 
-        return "Create";
+        return "redirect:/home";
+
     }
+
 }
