@@ -8,7 +8,7 @@
 
 <nav th:replace="fragments/Navigation :: navigation"></nav>
 
-<div>
+<div class="container margin-tb">
 
     <button class="btn" th:classappend="${#execInfo.processedTemplateName == 'Create'} ? 'active' : ''">
         <a class="btn btn-outline-danger btn-lg" href="/create">
@@ -23,29 +23,30 @@
     <!--<p th:text="${r}" />-->
     <!--</c:forEach>-->
 
-    <table>
-        <thead>
-        <tr>
-            <th> Title</th>
-            <th> Text</th>
-            <th> Color</th>
-            <th> Done</th>
-            <th> Date</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr th:if="${routines.empty}">
-            <td colspan="2"> No routines yet</td>
-        </tr>
-        <tr th:each="routine : ${routines}">
-            <td><span th:text="${routine.title}"> Title </span></td>
-            <td><span th:text="${routine.text}"> Text </span></td>
-            <td><span th:text="${routine.color}"> color </span></td>
-            <td><span th:text="${routine.done}"> done </span></td>
-            <td><span th:text="${routine.date}"> date </span></td>
-        </tr>
-        </tbody>
-    </table>
+        <table>
+            <thead>
+            <tr>
+                <th> Title</th>
+                <th> Text</th>
+                <th> Color</th>
+                <th> Done</th>
+                <th> Date</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:if="${routines.empty}">
+                <td colspan="2"> No routines yet</td>
+            </tr>
+            <tr th:each="routine : ${routines}">
+                <td><span th:text="${routine.title}"> Title </span></td>
+                <td><span th:text="${routine.text}"> Text </span></td>
+                <td><span th:text="${routine.color}"> color </span></td>
+                <td><span th:text="${routine.done}"> done </span></td>
+                <td><span th:text="${routine.date}"> date </span></td>
+            </tr>
+            </tbody>
+        </table>
+
 
     <!--<script>-->
     <!--function LoopTest() {-->
