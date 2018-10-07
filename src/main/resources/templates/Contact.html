@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html th:lang="#{language_code}" xmlns:th="http://www.thymeleaf.org">
 
 <head th:replace="fragments/Head :: head"></head>
 
@@ -9,8 +9,8 @@
 <nav th:replace="fragments/Navigation :: navigation"></nav>
 
 <div class="container margin-tb">
-    <h3>Our Contact </h3>
-    <p>We have mobile phones гыыы </p>
+    <h3 th:text="#{our_contact}"> </h3>
+    <p th:text="#{contact_info}"></p>
 </div>
 
 </body>

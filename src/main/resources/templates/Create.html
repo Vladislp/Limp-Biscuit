@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html th:lang="#{language_code}" xmlns:th="http://www.thymeleaf.org">
 
 <head th:replace="fragments/Head :: head"></head>
 
@@ -27,7 +27,7 @@
             <input type="text" class="form-control" placeholder="Enter color" id="color" name="color" required>
         </div>
 
-        <button type="submit" class="btn btn-danger">Create a routine</button>
+        <button type="submit" class="btn btn-danger" th:text="#{create_routine_button}"></button>
 
         <hr>
 

@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html th:lang="#{language_code}" xmlns:th="http://www.thymeleaf.org">
 
-<head th:replace="fragments/Head :: head"></head>
+<head th:replace="fragments/Head :: head">
+
+</head>
+
 
 <body>
 
 <nav th:replace="fragments/Navigation :: navigation"></nav>
 
 <div class="container margin-tb">
-    <h3>Little bit about us </h3>
-    <a> blablabla</a>
+    <h3 th:text="#{about_us}">></h3>
+    <a th:text="#{about_us_text}"></a>
 </div>
 
 

@@ -21,6 +21,7 @@ public class LoginController {
 
     @GetMapping("")
     public String get() {
+
         return "Login";
     }
 
@@ -30,7 +31,6 @@ public class LoginController {
         User user = userRepository.findByEmail(email);
         try {
             user.getEmail();
-
         } catch (Exception e) {
             return "Login";
         }
@@ -41,7 +41,7 @@ public class LoginController {
         System.out.println(hash);
         System.out.println(user.getHash());
 
-        if(passwordEncoder.matches(password, user.getHash())){
+        if (passwordEncoder.matches(password, user.getHash())) {
             return "Home";
         }
         return "Login";

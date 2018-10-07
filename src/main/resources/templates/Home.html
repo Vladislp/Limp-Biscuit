@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html th:lang="#{language_code}" xmlns:th="http://www.thymeleaf.org">
 
 <head th:replace="fragments/Head :: head"></head>
 
@@ -12,40 +12,33 @@
 
     <button class="btn" th:classappend="${#execInfo.processedTemplateName == 'Create'} ? 'active' : ''">
         <a class="btn btn-outline-danger btn-lg" href="/create">
-            <em class="far fa-plus-square"></em> CREATE ROUTINE
+            <em class="far fa-plus-square" th:text="#{createroutine}"></em>
         </a>
     </button>
 
-
-    <!--<h1>Congratulations</h1>-->
-    <!--&lt;!&ndash;<p th:text="${routine}" />&ndash;&gt;-->
-    <!--<c:forEach var="r" items="${routines}">-->
-    <!--<p th:text="${r}" />-->
-    <!--</c:forEach>-->
-
-        <table class = "table">
-            <thead>
-            <tr class=" table-danger">
-                <th> Title</th>
-                <th> Text</th>
-                <th> Color</th>
-                <th> Done</th>
-                <th> Date</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr class="table-danger" th:if="${routines.empty}">
-                <td class="table-danger" colspan="2"> No routines yet</td>
-            </tr>
-            <tr class="table-danger" th:each="routine : ${routines}">
-                <td class="table-danger"><span th:text="${routine.title}"> Title </span></td>
-                <td class="table-danger"><span th:text="${routine.text}"> Text </span></td>
-                <td class="table-danger"><span th:text="${routine.color}"> color </span></td>
-                <td class="table-danger"><span th:text="${routine.done}"> done </span></td>
-                <td class="table-danger"><span th:text="${routine.date}"> date </span></td>
-            </tr>
-            </tbody>
-        </table>
+    <table class="table">
+        <thead>
+        <tr class=" table-danger">
+            <th> Title</th>
+            <th> Text</th>
+            <th> Color</th>
+            <th> Done</th>
+            <th> Date</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr class="table-danger" th:if="${routines.empty}">
+            <td class="table-danger" colspan="2"> No routines yet</td>
+        </tr>
+        <tr class="table-danger" th:each="routine : ${routines}">
+            <td class="table-danger"><span th:text="${routine.title}"> th:text="#{routine_title}"> </span></td>
+            <td class="table-danger"><span th:text="${routine.text}"> th:text="#{routine_text}"> </span></td>
+            <td class="table-danger"><span th:text="${routine.color}"> th:text="#{routine_color}"> </span></td>
+            <td class="table-danger"><span th:text="${routine.done}"> th:text="#{routine_done}"></span></td>
+            <td class="table-danger"><span th:text="${routine.date}"> th:text="#{routine_date}"> </span></td>
+        </tr>
+        </tbody>
+    </table>
 
 
     <!--<script>-->
