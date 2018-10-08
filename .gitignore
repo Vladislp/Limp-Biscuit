@@ -27,4 +27,4 @@ target
 /.nb-gradle/
 
 ### Ignore config files ###
-###src/main/resources/application.properties###
+src/main/resources/application.properties
