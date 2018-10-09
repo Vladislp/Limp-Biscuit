@@ -11,16 +11,17 @@
 <div class="container margin-tb">
     <h1 class="mb-4"th:text="#{sign_in}"></h1>
 
-    <form action="/login" method="post">
+    <form action="SignupSuccess.html" method="post">
         <div class="form-group">
             <label for="email"><strong th:text="#{email}"></strong></label>
-            <input type="text" class="form-control" placeholder="Enter email" id="email" name="email" required>
+            <input type="text" class="form-control" placeholder="Enter email" id="email" name="email" required title=
+            "Here you put email, my brother">
         </div>
 
         <div class="form-group">
             <label for="password"><strong th:text="#{password}"></strong></label>
             <input type="password" class="form-control" placeholder="Enter a password" id="password" name="password"
-                   required>
+                   required title="Here put password, my brother">
         </div>
 
         <div class="form-group">

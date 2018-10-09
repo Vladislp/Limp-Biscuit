@@ -1,51 +1,17 @@
-/**
+
 .margin-tb {
     margin-top: 64px;
     margin-bottom: 64px;
 }
-*/
 
-span::before {
-    content: 'content that needs a delay';
-    margin-top: 25px;
-    font-size: 21px;
-    text-align: center;
-    animation: fadein 4s;
-    -moz-animation: fadein 4s; /* Firefox */
-    -webkit-animation: fadein 4s; /* Safari and Chrome */
-    -o-animation: fadein 4s; /* Opera */
-
+input:invalid {
+    border: 2px dashed red;
 }
 
-@keyframes fadein {
-    from {
-        opacity:0;
-    }
-    to {
-        opacity:1;
-    }
+input:valid {
+    border: 2px solid black;
 }
-@-moz-keyframes fadein { /* Firefox */
-    from {
-        opacity:0;
-    }
-    to {
-        opacity:1;
-    }
-}
-@-webkit-keyframes fadein { /* Safari and Chrome */
-    from {
-        opacity:0;
-    }
-    to {
-        opacity:1;
-    }
-}
-@-o-keyframes fadein { /* Opera */
-    from {
-        opacity:0;
-    }
-    to {
-        opacity: 1;
-    }
-}
+
+
+
+
