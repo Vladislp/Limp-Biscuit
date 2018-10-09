@@ -1,6 +1,7 @@
 package LimpBiscuit.Demo.Controller;
 
 import LimpBiscuit.Demo.Entities.User;
+import LimpBiscuit.Demo.MailService;
 import LimpBiscuit.Demo.Repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -15,6 +16,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class SignUpController {
     @Autowired
     private UserRepository userRepository;
+
+    @Autowired
+    private MailService mailService;
 
     @GetMapping("")
     public String get() {
@@ -32,6 +36,14 @@ public class SignUpController {
 
             User user = new User(email, hash);
             userRepository.save(user);
+
+            String message = "Thanks for registration";
+
+            try {
+                this.mailService.sendEmail(user.getEmail(), message);
+            } catch (Exception e) {
+                System.out.println("something wrong with sending email");
+            }
 
             return "redirect:/home";
         }
