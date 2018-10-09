@@ -1,15 +1,17 @@
+
 .margin-tb {
     margin-top: 64px;
     margin-bottom: 64px;
 }
 
-.btn {
-    display:block;
-    margin: 0 auto;
+input:invalid {
+    border: 2px dashed red;
 }
 
-.btn-outline-danger {
-    color: red;
+input:valid {
+    border: 2px solid black;
 }
+
+
 
 

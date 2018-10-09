@@ -15,22 +15,24 @@
             <p>Please fill in this form to create an account.</p>
         </div>
 
+
+
         <div class="form-group">
             <label for="email"><strong th:text="#{email}"></strong></label>
-            <input type="text" class="form-control" placeholder="Enter Email" id="email" name="email"
-                   required/>
+            <input type="text" value="default@example.com" class="form-control" placeholder="Enter Email" id="email" name="email"
+                   required title="Write here your EMAIL"/>
         </div>
 
         <div class="form-group">
             <label for="password"> <strong th:text="#{password}"></strong></label>
             <input type="password" class="form-control" placeholder="Enter Password" id="password" name="password"
-                   required>
+                   required title="Here i need you to put your password">
         </div>
 
         <div class="form-group">
             <label for="psw-repeat"><strong th:text="#{repeat_password}"></strong></label>
             <input type="password" class="form-control" placeholder="Repeat Password" id="psw-repeat" name="psw-repeat"
-                   required/>
+                   required title="Repeat your password, please"/>
         </div>
 
         <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
