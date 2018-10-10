@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html th:lang="#{language_code}" xmlns:th="http://www.thymeleaf.org">
 
 <head th:replace="fragments/Head :: head"></head>
 
@@ -9,14 +9,8 @@
 <nav th:replace="fragments/Navigation :: navigation"></nav>
 
 <div class="container margin-tb">
-    <h3>Your personal schedule </h3>
-    <p>A schedule or a timetable, as a basic time-management tool, consists of a list of times at which possible tasks,
-        events, or actions are intended to take place, or of a sequence of events in the chronological order in which
-        such things are intended to take place.
-        The process of creating a schedule - deciding how to order these tasks and how to commit resources between the
-        variety of possible tasks - is called scheduling,and a person responsible for making a particular schedule may
-        be called a scheduler.
-        Making and following schedules is an ancient human activity.</p>
+    <h3 th:text="#{your_personal_schedule}"> </h3>
+    <p th:text="#{schedule_text}"></p>
 
     
 
