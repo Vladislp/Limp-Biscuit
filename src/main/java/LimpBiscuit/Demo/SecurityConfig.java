@@ -28,6 +28,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                         "/home",
                         "/about",
                         "/contact",
+                        "/google",
                         "/login",
                         "/signup",
                         "/create",

@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.security.Principal;
 import java.util.List;
 
 @Controller
@@ -21,7 +22,7 @@ public class IndexController {
     }
 
     @GetMapping("/home")
-    public ModelAndView home() {
+    public ModelAndView home(Principal user) {
         List<Routine> routines = routineRepository.findAll();
 
         ModelAndView modelAndView = new ModelAndView("Home");
@@ -30,7 +31,8 @@ public class IndexController {
 //            modelAndView.addObject("routine", r);
 //        }
         modelAndView.addObject("routines", routines);
-
+        modelAndView.addObject("user", user);
+        System.out.println(user.toString());
         return modelAndView;
     }
 
