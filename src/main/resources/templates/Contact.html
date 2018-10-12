@@ -8,9 +8,20 @@
 
 <nav th:replace="fragments/Navigation :: navigation"></nav>
 
-<div class="container margin-tb">
-    <h3 th:text="#{our_contact}"> </h3>
+<script>
+    $(document).ready(function(){
+        $("button").click(function(){
+            $("p").hide();
+        });
+    });
+</script>
+
+<div class="container margin-tb" id="div1"><h3 th:text="#{our_contact}"></h3>
     <p th:text="#{contact_info}"></p>
+
+    <button>Hide extra info</button>
 </div>
 
+
 </body>
+</html>
