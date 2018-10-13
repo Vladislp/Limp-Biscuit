@@ -12,8 +12,24 @@
     <h3 th:text="#{your_personal_schedule}"> </h3>
     <p th:text="#{schedule_text}"></p>
 
-    
+    <button onclick="myFunction()">Try it</button>
 
+    <div id="Show and Hide">
+        Your button
+    </div>
+
+</div>
+
+<script>
+    function myFunction() {
+        var x = document.getElementById("Show and Hide");
+        if (x.style.display === "none") {
+            x.style.display = "block";
+        } else {
+            x.style.display = "none";
+        }
+    }
+</script>
 </div>
 
 </body>
