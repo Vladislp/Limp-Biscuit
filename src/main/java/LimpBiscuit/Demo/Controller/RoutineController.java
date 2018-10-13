@@ -17,7 +17,7 @@ public class RoutineController {
         return userRepository.join();
     }
 
-    public List<Routine> group() {
+    public List<Routine> countimine() {
         return routineRepository.countimine();
     }
 }
