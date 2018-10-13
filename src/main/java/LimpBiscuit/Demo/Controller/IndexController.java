@@ -15,7 +15,7 @@ public class IndexController {
     @Autowired
     private RoutineRepository routineRepository;
 
-    @GetMapping(value = {"/","/index"})
+    @GetMapping(value = {"/", "/index"})
     public String index() {
 
         return "Index";
@@ -31,8 +31,8 @@ public class IndexController {
 //            modelAndView.addObject("routine", r);
 //        }
         modelAndView.addObject("routines", routines);
-        modelAndView.addObject("user", user);
-        System.out.println(user.toString());
+        //modelAndView.addObject("user", user);
+        // System.out.println(user.toString());
         return modelAndView;
     }
 
