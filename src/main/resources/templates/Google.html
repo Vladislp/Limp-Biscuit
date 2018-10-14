@@ -2,7 +2,7 @@
 
 <!--<html th:lang="#{language_code}" xmlns:th="http://www.thymeleaf.org">-->
 
-<html>
+<html th:lang="#{language_code}" xmlns:th="http://www.thymeleaf.org">
 <head>
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
     <script src="https://apis.google.com/js/api:client.js"></script>
@@ -12,13 +12,19 @@
             gapi.load('auth2', function(){
                 // Retrieve the singleton for the GoogleAuth library and set up the client.
                 auth2 = gapi.auth2.init({
-                    client_id: 'http://429928604467-tjsf2vjniv039llqtlqi99kqqehs4cui.apps.googleusercontent.com',
+                    callback: "onSignInCompleted",
+                    client_id: '429928604467-ct36hrt1d2pr0g9u1ve6keou3525fcq5.apps.googleusercontent.com',
                     cookiepolicy: 'single_host_origin',
                     fetch_basic_profile: false,
-                    scope: 'profile'
+                    scope: "https://www.googleapis.com/auth/plus.login",
+                    requestvisibleactions: "http://schemas.google.com/AddActivity"
+                    // apiKey: 'AIzaSyATLgTMIAtsuAUHQctKiueCZ4B3ObqJh4s'
+
                 });
                 auth2.signIn().then(function () {
                     console.log(auth2.currentUser.get().getId())
+                    googleUser = gapi.auth2.getAuthInstance();
+                    googleUser.isSignedIn.listen(updateSigninStatus);
                 })
                 attachSignin(document.getElementById('customBtn'));
             });
