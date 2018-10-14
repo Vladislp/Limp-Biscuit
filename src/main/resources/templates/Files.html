@@ -7,37 +7,41 @@
 <body>
 
 <nav th:replace="fragments/Navigation :: navigation"></nav>
+<div class="container margin-tb">
 
-<button class="btn" th:classappend="${#execInfo.processedTemplateName == 'File'} ? 'active' : ''">
-    <a class="btn btn-outline-danger btn-lg" href="/uploadfile">
-        <em class="far fa-plus-square" th:text="#{uploadfile}"></em>
-    </a>
-</button>
+    <button class="btn" th:classappend="${#execInfo.processedTemplateName == 'File'} ? 'active' : ''">
+        <a class="btn btn-danger btn-lg" href="/uploadfile">
+            <em class="far fa-plus-square" th:text="#{uploadfile}"></em>
+        </a>
+    </button>
 
-<table class="table">
-    <thead>
-    <tr class=" table-danger">
-        <th> Title</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr class="table-danger" th:if="${files.empty}">
-        <td class="table-danger" colspan="2"> No files yet</td>
-    </tr>
-    <tr class="table-danger" th:each="file : ${files}">
-        <td class="table-danger"><span th:text="${file.id}"> th:text="#{routine_text}"> </span></td>
-        <td class="table-danger"><span th:text="${file.fileName}"> th:text="#{routine_title}"> </span></td>
-        <td class="table-danger"><span th:text="${file.fileType}"> th:text="#{routine_text}"> </span></td>
-        <td class="table-danger"><span th:text="${file.data}"> th:text="#{routine_text}"> </span></td>
-    </tr>
-    </tbody>
-</table>
+    <table class="table">
+        <thead>
+        <tr class=" table-danger">
+            <th> Title</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr class="table-danger" th:if="${files.empty}">
+            <td class="table-danger" colspan="2"> No files yet</td>
+        </tr>
+        <tr class="table-danger" th:each="file : ${files}">
+            <td class="table-danger"><span th:text="${file.id}"> th:text="#{routine_text}"> </span></td>
+            <td class="table-danger"><span th:text="${file.fileName}"> th:text="#{routine_title}"> </span></td>
+            <td class="table-danger"><span th:text="${file.fileType}"> th:text="#{routine_text}"> </span></td>
+            <td class="table-danger"><span th:text="${file.data}"> th:text="#{routine_text}"> </span></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
 
-<div>
-    <h1>
-        Allalaadimiseks minge routinestarter.com/download/{fileId}
-        Kustutamiseks minge routinestarter.com/delete/{fileId}
-    </h1>
+<div class="container margin-tb">
+    <ul>
+
+        <li>Allalaadimiseks minge routinestarter.com/download/{fileId}</li>
+
+        <li>Kustutamiseks minge routinestarter.com/delete/{fileId}</li>
+    </ul>
 </div>
 
 </body>

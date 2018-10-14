@@ -1,3 +1,8 @@
+.btn {
+    display: block;
+    margin: 0 auto;
+}
+
 
 .margin-tb {
     margin-top: 64px;
@@ -18,27 +23,7 @@ input:valid {
     background-color: grey;
 }
 
-* {box-sizing: border-box}
 
-body {
-    background-image: url("Background.jpg");
-    background-size: cover;
-    overflow-x: hidden;
-    -webkit-animation: imgFade 10s;
-    animation: imgFade 10s;
-}
-
-@-webkit-keyframes imgFade
-{
-    from {background: #FFF;}
-    to {background: url(Background.jpg) 0 -120px;}
-}
-
-@keyframes imgFade
-{
-    from {background: #FFF;}
-    to {background: url(Background.jpg) 0 -120px;}
-}
 
 
 
