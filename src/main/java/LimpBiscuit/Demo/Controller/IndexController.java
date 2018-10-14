@@ -47,4 +47,9 @@ public class IndexController {
 
         return "Contact";
     }
+
+    @GetMapping("/line")
+    public String get(){
+        return "Line";
+    }
 }

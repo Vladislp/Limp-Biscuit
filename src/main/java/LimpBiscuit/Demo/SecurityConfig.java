@@ -38,7 +38,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                         "/uploadfile",
                         "/downloadfile/**",
                         "/delete/**",
-                        "/files"
+                        "/files",
+                        "/line"
                 ).permitAll()
                 .anyRequest().authenticated()
                 .and()
