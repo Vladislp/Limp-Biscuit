@@ -19,9 +19,8 @@ public interface UserRepository extends CrudRepository<User, Long> {
 
     User findByEmail(String email);
 
-    //JOIN Näita iga kasutaja emaili ja rutiinide descriptioni ja kuupäeva
-    @Query(value = "SELECT user.id, user.email,routine.text, routine.date FROM user JOIN routine ON user.id = routine.user_id", nativeQuery = true)
-    List<Object> join();
+    @Query(value = "SELECT user.*, COUNT(*) FROM user JOIN routine ON user.id = routine.user_id WHERE routine.done = 0 GROUP BY user.id", nativeQuery = true)
+    List<Routine> findUsersNotDoneRoutines();
 
-//    Iterable<User> findAllByEmail(String email);
+    Iterable<User> findAllByEmail(String email);
 }

@@ -21,20 +21,7 @@ public class IndexController {
         return "Index";
     }
 
-    @GetMapping("/home")
-    public ModelAndView home(Principal user) {
-        List<Routine> routines = routineRepository.findAll();
 
-        ModelAndView modelAndView = new ModelAndView("Home");
-//        modelAndView.addObject("routine", "Baeldung");
-//        for (Routine r: routines){
-//            modelAndView.addObject("routine", r);
-//        }
-        modelAndView.addObject("routines", routines);
-        //modelAndView.addObject("user", user);
-        // System.out.println(user.toString());
-        return modelAndView;
-    }
 
     @GetMapping("/about")
     public String about() {
