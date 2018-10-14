@@ -35,6 +35,7 @@
                 });
                 auth2.signOut().then(function () {
                     googleUser = gapi.auth2.getAuthInstance();
+                    auth2.disconnect();
                     console.log('User signed out');
                 });
 
@@ -93,7 +94,7 @@
     </style>
 </head>
 <body>
-<a href="#" onclick="signOut();">Sign out</a>
+<a href="/index.html" onclick="signOut();">Sign out</a>
 <!-- In the callback, you would hide the gSignInWrapper element on a
 successful sign in -->
 <div id="gSignInWrapper">
