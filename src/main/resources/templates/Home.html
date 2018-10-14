@@ -11,7 +11,7 @@
 <div class="container margin-tb">
 
     <button class="btn" th:classappend="${#execInfo.processedTemplateName == 'Create'} ? 'active' : ''">
-        <a class="btn btn-outline-danger btn-lg" href="/create">
+        <a class="btn btn-danger btn-lg" href="/create">
             <em class="far fa-plus-square" th:text="#{createroutine}"></em>
         </a>
     </button>

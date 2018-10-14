@@ -32,9 +32,6 @@
                 </a>
             </li>
         </ul>
-    </div>
-
-    <div class="collapse navbar-collapse" id="navigation2">
         <ul class="navbar-nav ml-auto">
             <li th:if="${user == null}" class="nav-item" th:classappend="${#execInfo.processedTemplateName == 'SignUp'} ? 'active' : ''">
                 <a class="nav-link" href="/signup">
@@ -44,14 +41,20 @@
             </li>
 
             <!--<li class="nav-item" th:classappend="${#execInfo.processedTemplateName == 'Login'} ? 'active' : ''">-->
-                <!--<a class="nav-link" href="/login">-->
-                    <!--<em class="fas fa-sign-in-alt fa-sm"></em>-->
-                    <!--<span th:text="#{Google}"></span>-->
-                <!--</a>-->
+            <!--<a class="nav-link" href="/login">-->
+            <!--<em class="fas fa-sign-in-alt fa-sm"></em>-->
+            <!--<span th:text="#{Google}"></span>-->
+            <!--</a>-->
             <!--</li>-->
             <li class="nav-item" th:classappend="${#execInfo.processedTemplateName == 'Login'} ? 'active' : ''">
-                <a class="nav-link" href="/google">
+                <a class="nav-link" href="/login">
                     <em class="fas fa-sign-in-alt fa-sm"></em>
+                    <span th:text="#{login}"></span>
+                </a>
+            </li>
+            <li class="nav-item" th:classappend="${#execInfo.processedTemplateName == 'Google'} ? 'active' : ''">
+                <a class="nav-link" href="/google">
+                    <em class="fab fa-google"></em>
                     <span th:text="#{Google}"></span>
                 </a>
             </li>
@@ -73,6 +76,8 @@
 
         </ul>
     </div>
+
+
 
 </nav>
 </body>

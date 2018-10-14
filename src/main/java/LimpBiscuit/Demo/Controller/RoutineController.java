@@ -2,6 +2,7 @@ package LimpBiscuit.Demo.Controller;
 
 import LimpBiscuit.Demo.Entities.Routine;
 import LimpBiscuit.Demo.Repositories.RoutineRepository;
+import LimpBiscuit.Demo.Repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,32 +12,28 @@ import java.security.Principal;
 import java.util.List;
 
 @Controller
-public class IndexController {
+public class RoutineController {
+
+    @Autowired
+    private UserRepository userRepository;
     @Autowired
     private RoutineRepository routineRepository;
 
-    @GetMapping(value = {"/", "/index"})
-    public String index() {
+    @GetMapping("/home")
+    public ModelAndView home(Principal user) {
+        List<Routine> routines = routineRepository.findAll();
 
-        return "Index";
+        ModelAndView modelAndView = new ModelAndView("Home");
+
+        modelAndView.addObject("routines", routines);
+
+        System.out.println(userRepository.findUsersNotDoneRoutines());
+
+        return modelAndView;
+
+
     }
 
 
 
-    @GetMapping("/about")
-    public String about() {
-
-        return "About";
-    }
-
-    @GetMapping("/contact")
-    public String contact() {
-
-        return "Contact";
-    }
-
-    @GetMapping("/line")
-    public String get(){
-        return "Line";
-    }
 }
