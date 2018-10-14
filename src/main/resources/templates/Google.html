@@ -22,10 +22,23 @@
 
                 });
                 auth2.signIn().then(function () {
+                    console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
                     console.log(auth2.currentUser.get().getId())
                     googleUser = gapi.auth2.getAuthInstance();
                     googleUser.isSignedIn.listen(updateSigninStatus);
-                })
+
+                    var profile = googleUser.getBasicProfile();
+                    console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+                    console.log('Name: ' + profile.getName());
+                    console.log('Image URL: ' + profile.getImageUrl());
+                    console.log('Email: ' + profile.getEmail());
+                });
+                auth2.signOut().then(function () {
+                    googleUser = gapi.auth2.getAuthInstance();
+                    console.log('User signed out');
+                });
+
+
                 attachSignin(document.getElementById('customBtn'));
             });
         };
@@ -40,6 +53,7 @@
                     alert(JSON.stringify(error, undefined, 2));
                 });
         }
+
     </script>
     <style type="text/css">
         #customBtn {
@@ -79,6 +93,7 @@
     </style>
 </head>
 <body>
+<a href="#" onclick="signOut();">Sign out</a>
 <!-- In the callback, you would hide the gSignInWrapper element on a
 successful sign in -->
 <div id="gSignInWrapper">
