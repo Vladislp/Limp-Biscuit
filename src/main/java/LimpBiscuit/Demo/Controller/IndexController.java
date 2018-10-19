@@ -3,11 +3,15 @@ package LimpBiscuit.Demo.Controller;
 import LimpBiscuit.Demo.Entities.Routine;
 import LimpBiscuit.Demo.Repositories.RoutineRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.oauth2.provider.OAuth2Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.security.Principal;
+import java.util.LinkedHashMap;
 import java.util.List;
 
 @Controller
@@ -39,4 +43,10 @@ public class IndexController {
     public String get(){
         return "Line";
     }
+
+//    @RequestMapping(value = "/user")
+//    public Principal user(Principal principal) {
+//        System.out.println("aaaaaaaaaaaa");
+//        return principal;
+//    }
 }

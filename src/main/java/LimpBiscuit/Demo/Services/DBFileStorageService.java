@@ -1,6 +1,7 @@
-package LimpBiscuit.Demo;
+package LimpBiscuit.Demo.Services;
 
 import LimpBiscuit.Demo.Entities.DBFile;
+import LimpBiscuit.Demo.FileStorageException;
 import LimpBiscuit.Demo.Repositories.DBFileRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

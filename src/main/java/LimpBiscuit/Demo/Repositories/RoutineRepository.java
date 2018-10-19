@@ -12,4 +12,5 @@ public interface RoutineRepository extends CrudRepository<Routine, Long> {
     <S extends Routine> S save(S entity);
 
     List<Routine> findAll();
+    List<Routine> findByEmail(String email);
 }

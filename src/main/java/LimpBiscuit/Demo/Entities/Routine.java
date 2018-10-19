@@ -12,6 +12,8 @@ public class Routine {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private int id;
     @NotNull
+    private String email;
+    @NotNull
     private String title;
     @NotNull
     private String text;
@@ -28,7 +30,8 @@ public class Routine {
     private User user;
 
 
-    public Routine(String title, String text, String color, Date date) {
+    public Routine(String email, String title, String text, String color, Date date) {
+        this.email = email;
         this.title = title;
         this.text = text;
         this.done = false;
@@ -46,6 +49,14 @@ public class Routine {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getTitle() {

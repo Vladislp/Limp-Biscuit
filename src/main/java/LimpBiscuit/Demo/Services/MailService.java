@@ -1,4 +1,4 @@
-package LimpBiscuit.Demo;
+package LimpBiscuit.Demo.Services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.SimpleMailMessage;

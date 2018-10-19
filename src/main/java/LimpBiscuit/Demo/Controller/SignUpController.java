@@ -1,7 +1,7 @@
 package LimpBiscuit.Demo.Controller;
 
 import LimpBiscuit.Demo.Entities.User;
-import LimpBiscuit.Demo.MailService;
+import LimpBiscuit.Demo.Services.MailService;
 import LimpBiscuit.Demo.Repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;

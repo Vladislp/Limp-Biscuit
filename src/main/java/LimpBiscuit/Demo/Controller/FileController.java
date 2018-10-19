@@ -1,6 +1,6 @@
 package LimpBiscuit.Demo.Controller;
 
-import LimpBiscuit.Demo.DBFileStorageService;
+import LimpBiscuit.Demo.Services.DBFileStorageService;
 import LimpBiscuit.Demo.Entities.DBFile;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
