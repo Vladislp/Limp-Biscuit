@@ -2,7 +2,13 @@
 
 <html th:lang="#{language_code}" xmlns:th="http://www.thymeleaf.org">
 
-<head th:replace="fragments/Head :: head"></head>
+<head th:replace="fragments/Head :: head">
+    <meta name="description" content="Routine starter. Scheduling is the art of planning your activities so that you can achieve your goals and priorities in the time you have available.">
+    <meta name="keywords" content="Routine, Schedule, planning, organized, goals, achieve">
+    <meta name="author" content="Limp-Biscuit">
+    <title>Routine starter</title>
+
+</head>
 
 <body>
 
@@ -13,8 +19,6 @@
     <p th:text="#{schedule_text}"></p>
 
     <button class="btn btn-danger" onclick="myFunction()">Try it</button>
-
-    <!--<a href = "user">Click here to Google Login</a>-->
 
     <div id="Show and Hide">
         SIIN PEAKS NAGU MIDAGI OLEMA, AGA I GUESS FOR NOW IT IS OKAY
