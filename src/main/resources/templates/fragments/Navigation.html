@@ -54,6 +54,14 @@
                     <span th:text="#{Google}"></span>
                 </a>
             </li>
+
+            <li class="nav-item" th:classappend="${#execInfo.processedTemplateName == 'Log Out'} ? 'active' : ''">
+                <a class="nav-link" href="/logoutt">
+                    <em class="fab fa-logout"></em>
+                    Log Out
+                </a>
+            </li>
+
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
                    aria-haspopup="true" aria-expanded="false">

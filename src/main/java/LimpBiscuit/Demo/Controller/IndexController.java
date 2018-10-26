@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpServletRequest;
 import java.security.Principal;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -44,9 +45,10 @@ public class IndexController {
         return "Line";
     }
 
-//    @RequestMapping(value = "/user")
-//    public Principal user(Principal principal) {
-//        System.out.println("aaaaaaaaaaaa");
-//        return principal;
-//    }
+    @GetMapping("/logoutt")
+    public String logout(HttpServletRequest request){
+        request.getSession(true).invalidate();
+
+        return "Index";
+    }
 }
