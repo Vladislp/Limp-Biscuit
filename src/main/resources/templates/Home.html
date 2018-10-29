@@ -11,8 +11,30 @@ Create your routines.">
 </head>
 
 <body>
-
 <nav th:replace="fragments/Navigation :: navigation"></nav>
+
+
+<button type="button" onclick="myFunction()">Show email</button>
+
+<script>
+    function myFunction() {
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                console.log(this.responseText);
+                var response = JSON.parse(this.responseText);
+                for (var i = 0; i < response.length; i++ ) {
+                    document.getElementById("email-" + response[i].id).innerHTML = response[i].email;
+                    console.log(response[i])
+                }
+
+            }
+        };
+        xhttp.open("GET", "/api/routines");
+        xhttp.send();
+    }
+</script>
+
 
 <div class="container margin-tb">
 
@@ -30,6 +52,7 @@ Create your routines.">
             <th> Color</th>
             <th> Done</th>
             <th> Date</th>
+            <th> Email</th>
         </tr>
         </thead>
         <tbody>
@@ -37,11 +60,12 @@ Create your routines.">
             <td class="table-danger" colspan="2"> No routines yet</td>
         </tr>
         <tr class="table-danger" th:each="routine : ${routines}">
-            <td class="table-danger"><span th:text="${routine.title}"> th:text="#{routine_title}"> </span></td>
-            <td class="table-danger"><span th:text="${routine.text}"> th:text="#{routine_text}"> </span></td>
-            <td class="table-danger"><span th:text="${routine.color}"> th:text="#{routine_color}"> </span></td>
-            <td class="table-danger"><span th:text="${routine.done}"> th:text="#{routine_done}"></span></td>
-            <td class="table-danger"><span th:text="${routine.date}"> th:text="#{routine_date}"> </span></td>
+            <td class="table-danger"><span th:text="${routine.title}"></span></td>
+            <td class="table-danger"><span th:text="${routine.text}"></span></td>
+            <td class="table-danger"><span th:text="${routine.color}"></span></td>
+            <td class="table-danger"><span th:text="${routine.done}"></span></td>
+            <td class="table-danger"><span th:text="${routine.date}"></span></td>
+            <td class="table-danger"><span th:id="'email-'+${routine.id}"> not loaded </span></td>
         </tr>
         </tbody>
     </table>
