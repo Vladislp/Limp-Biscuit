@@ -27,14 +27,14 @@
 
             <li class="nav-item" th:classappend="${#execInfo.processedTemplateName == 'Files'} ? 'active' : ''">
                 <a class="nav-link" href="/files">
-                    <em  class="far fa-file"> </em>
+                    <em  class="far fa-file"></em>
                     <span th:text="#{files}"></span>
                 </a>
             </li>
 
             <li class="nav-item" th:classappend="${#execInfo.processedTemplateName == 'Chat'} ? 'active' : ''">
                 <a class="nav-link" href="/chat">
-                    <em  class="far fa-file"> </em>
+                    <em class="far fa-comments"></em>
                     <span th:text="#{chat}"></span>
                 </a>
             </li>
