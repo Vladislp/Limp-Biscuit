@@ -1,0 +1,27 @@
+spring.jpa.show-sql=true
+spring.jpa.hibernate.ddl-auto=create-drop
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL5InnoDBDialect
+spring.datasource.url=jdbc:mysql://localhost:{port}/{database}?useSSL=false&allowPublicKeyRetrieval=true
+spring.datasource.username={username}
+spring.datasource.password={password}
+email.host={host}
+email.port={host}
+email.username={username}
+email.password={password}
+spring.mvc.static-path-pattern=/static/**
+logging.level.org.hibernate.SQL=DEBUG
+logging.level.org.springframework.web=INFO
+spring.servlet.multipart.enabled=true
+spring.servlet.multipart.file-size-threshold=2KB
+spring.servlet.multipart.max-file-size=200MB
+spring.servlet.multipart.max-request-size=215MB
+security.oauth2.client.clientId={id}
+security.oauth2.client.clientSecret={secret}
+security.oauth2.client.accessTokenUri=https://www.googleapis.com/oauth2/v3/token
+security.oauth2.client.userAuthorizationUri=https://accounts.google.com/o/oauth2/auth
+security.oauth2.client.tokenName=oauth_token
+security.oauth2.client.authenticationScheme=query
+security.oauth2.client.clientAuthenticationScheme=form
+security.oauth2.client.scope=profile email
+security.oauth2.resource.userInfoUri=https://www.googleapis.com/userinfo/v2/me
+security.oauth2.resource.preferTokenInfo=false
