@@ -12,10 +12,10 @@ function uploadSingleFile(file) {
     var xhr = new XMLHttpRequest();
     xhr.open("POST", "/uploadfile");
 
-    xhr.onload = function() {
+    xhr.onload = function () {
         console.log(xhr.responseText);
         var response = JSON.parse(xhr.responseText);
-        if(xhr.status == 200) {
+        if (xhr.status == 200) {
             singleFileUploadError.style.display = "none";
             singleFileUploadSuccess.innerHTML = "<p>File Uploaded Successfully.</p><p>DownloadUrl : <a href='" + response.fileDownloadUri + "' target='_blank'>" + response.fileDownloadUri + "</a></p>";
             singleFileUploadSuccess.style.display = "block";
@@ -28,9 +28,9 @@ function uploadSingleFile(file) {
     xhr.send(formData);
 }
 
-singleUploadForm.addEventListener('submit', function(event){
+singleUploadForm.addEventListener('submit', function (event) {
     var files = singleFileUploadInput.files;
-    if(files.length === 0) {
+    if (files.length === 0) {
         singleFileUploadError.innerHTML = "Please select a file";
         singleFileUploadError.style.display = "block";
     }

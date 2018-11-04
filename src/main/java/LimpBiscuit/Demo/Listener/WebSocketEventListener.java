@@ -1,6 +1,5 @@
 package LimpBiscuit.Demo.Listener;
 
-
 import LimpBiscuit.Demo.Model.ChatMessage;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -14,9 +13,7 @@ import org.springframework.web.socket.messaging.SessionDisconnectEvent;
 
 @Component
 public class WebSocketEventListener {
-
     private static final Logger logger = LoggerFactory.getLogger(WebSocketEventListener.class);
-
     @Autowired
     private SimpMessageSendingOperations messagingTemplate;
 
@@ -31,7 +28,7 @@ public class WebSocketEventListener {
 
         String username = (String) headerAccessor.getSessionAttributes().get("username");
 
-        if(username != null) {
+        if (username != null) {
             logger.info("User Disconnected : " + username);
 
             ChatMessage chatMessage = new ChatMessage();
@@ -41,5 +38,4 @@ public class WebSocketEventListener {
             messagingTemplate.convertAndSend("/topic/publicChatRoom", chatMessage);
         }
     }
-
 }

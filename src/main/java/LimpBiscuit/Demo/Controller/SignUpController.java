@@ -1,8 +1,8 @@
 package LimpBiscuit.Demo.Controller;
 
 import LimpBiscuit.Demo.Entities.User;
-import LimpBiscuit.Demo.Services.MailService;
 import LimpBiscuit.Demo.Repositories.UserRepository;
+import LimpBiscuit.Demo.Services.MailService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
@@ -16,7 +16,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class SignUpController {
     @Autowired
     private UserRepository userRepository;
-
     @Autowired
     private MailService mailService;
 
@@ -27,9 +26,9 @@ public class SignUpController {
 
     @PostMapping("")
     public String post(@RequestParam("email") String email, @RequestParam("password") String password,
-                       @RequestParam("psw-repeat") String psw_repeat){
+                       @RequestParam("psw-repeat") String psw_repeat) {
 
-        if(password.equals(psw_repeat)){
+        if (password.equals(psw_repeat)) {
 
             BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
             String hash = passwordEncoder.encode(password);

@@ -1,7 +1,7 @@
 package LimpBiscuit.Demo.Controller;
 
-import LimpBiscuit.Demo.Services.DBFileStorageService;
 import LimpBiscuit.Demo.Entities.DBFile;
+import LimpBiscuit.Demo.Services.DBFileStorageService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,7 +11,10 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -19,14 +22,12 @@ import java.util.List;
 
 @Controller
 public class FileController {
-
     private static final Logger logger = LoggerFactory.getLogger(FileController.class);
-
     @Autowired
     private DBFileStorageService dbFileStorageService;
 
     @GetMapping("/uploadfile")
-    public String file(){
+    public String file() {
         return "File";
     }
 
@@ -49,7 +50,7 @@ public class FileController {
     }
 
     @GetMapping("/delete/{fileId}")
-    public String delete(@PathVariable int fileId){
+    public String delete(@PathVariable int fileId) {
         DBFile dbFile = dbFileStorageService.getFile(fileId);
 
         try {
@@ -70,5 +71,4 @@ public class FileController {
 
         return modelAndView;
     }
-
 }

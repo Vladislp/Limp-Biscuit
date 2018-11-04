@@ -1,7 +1,5 @@
 package LimpBiscuit.Demo.Entities;
 
-import org.hibernate.annotations.GenericGenerator;
-
 import javax.persistence.*;
 
 @Entity
@@ -12,11 +10,8 @@ public class DBFile {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
 //    private String id;
     private int id;
-
     private String fileName;
-
     private String fileType;
-
     @Lob
     private byte[] data;
 

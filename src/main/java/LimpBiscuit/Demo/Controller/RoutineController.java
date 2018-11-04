@@ -10,13 +10,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import java.security.Principal;
 import java.util.LinkedHashMap;
 import java.util.List;
 
 @Controller
 public class RoutineController {
-
     @Autowired
     private UserRepository userRepository;
     @Autowired
@@ -40,12 +38,10 @@ public class RoutineController {
 //        System.out.println(userRepository.findUsersNotDoneRoutines());
 
         return modelAndView;
-
-
     }
 
     @GetMapping("/api/routines")
-    public ResponseEntity<Iterable<Routine>> getRoutines(){
+    public ResponseEntity<Iterable<Routine>> getRoutines() {
         return ResponseEntity.ok(routineRepository.findAll());
     }
 }

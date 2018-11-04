@@ -15,7 +15,6 @@ import java.util.List;
 @Transactional
 @Service
 public class DBFileStorageService {
-
     @Autowired
     private DBFileRepository dbFileRepository;
 
@@ -25,7 +24,7 @@ public class DBFileStorageService {
 
         try {
             // Check if the file's name contains invalid characters
-            if(fileName.contains("..")) {
+            if (fileName.contains("..")) {
                 throw new FileStorageException("Sorry! Filename contains invalid path sequence " + fileName);
             }
 
@@ -42,11 +41,11 @@ public class DBFileStorageService {
 //                .orElseThrow(() -> new MyFileNotFoundException("File not found with id " + fileId));
     }
 
-    public void deleteFile(int fileId){
+    public void deleteFile(int fileId) {
         dbFileRepository.deleteById(fileId);
     }
 
-    public List<DBFile> findFiles(){
+    public List<DBFile> findFiles() {
         return dbFileRepository.findAll();
     }
 }

@@ -9,6 +9,8 @@ public interface DBFileRepository extends Repository<DBFile, String> {
     <S extends DBFile> S save(S entity);
 
     List<DBFile> findAll();
+
     DBFile findById(int id);
+
     void deleteById(int id);
 }

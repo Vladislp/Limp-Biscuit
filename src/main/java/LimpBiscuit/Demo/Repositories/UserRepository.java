@@ -2,14 +2,11 @@ package LimpBiscuit.Demo.Repositories;
 
 import LimpBiscuit.Demo.Entities.Routine;
 import LimpBiscuit.Demo.Entities.User;
-import org.hibernate.hql.internal.antlr.SqlTokenTypes;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
-
-import static org.hibernate.hql.internal.antlr.SqlTokenTypes.FROM;
 
 @Repository
 public interface UserRepository extends CrudRepository<User, Long> {

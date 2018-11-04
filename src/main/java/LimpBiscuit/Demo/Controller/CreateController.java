@@ -16,7 +16,6 @@ import java.util.LinkedHashMap;
 @Controller
 @RequestMapping("/create")
 public class CreateController {
-
     @Autowired
     private RoutineRepository routineRepository;
 
@@ -37,7 +36,5 @@ public class CreateController {
         routineRepository.save(routine);
 
         return "redirect:/home";
-
     }
-
 }

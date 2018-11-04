@@ -3,7 +3,6 @@
     margin: 0 auto;
 }
 
-
 .margin-tb {
     margin-top: 64px;
     margin-bottom: 64px;
@@ -24,23 +23,23 @@ input:valid {
 }
 
 /*html {*/
-    /*margin: 40px auto;*/
-    /*text-align: center;*/
+/*margin: 40px auto;*/
+/*text-align: center;*/
 /*}*/
 /*.btn-googleplus {*/
-    /*background: #E93F2E;*/
-    /*border-radius: 0;*/
-    /*color: #fff;*/
-    /*border-width: 1px;*/
-    /*border-style: solid;*/
-    /*border-color: #b72213;*/
+/*background: #E93F2E;*/
+/*border-radius: 0;*/
+/*color: #fff;*/
+/*border-width: 1px;*/
+/*border-style: solid;*/
+/*border-color: #b72213;*/
 /*}*/
 /*.btn-googleplus:link, .btn-googleplus:visited {*/
-    /*color: #fff;*/
+/*color: #fff;*/
 /*}*/
 /*.btn-googleplus:active, .btn-googleplus:hover {*/
-    /*background: #b72213;*/
-    /*color: #fff;*/
+/*background: #b72213;*/
+/*color: #fff;*/
 /*}*/
 
 

@@ -25,10 +25,9 @@ public class Routine {
     @NotNull
     @Temporal(TemporalType.DATE)
     private Date date;
-//    @NotNull
+    //    @NotNull
     @ManyToOne
     private User user;
-
 
     public Routine(String email, String title, String text, String color, Date date) {
         this.email = email;

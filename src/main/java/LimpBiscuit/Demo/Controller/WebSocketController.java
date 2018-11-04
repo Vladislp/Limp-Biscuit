@@ -9,9 +9,6 @@ import org.springframework.stereotype.Controller;
 
 @Controller
 public class WebSocketController {
-
-
-
     @MessageMapping("/chat.sendMessage")
     @SendTo("/topic/publicChatRoom")
     public ChatMessage sendMessage(@Payload ChatMessage chatMessage) {
@@ -25,5 +22,4 @@ public class WebSocketController {
         headerAccessor.getSessionAttributes().put("username", chatMessage.getSender());
         return chatMessage;
     }
-
 }

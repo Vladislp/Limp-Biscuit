@@ -6,14 +6,12 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Os {
+public class RequestBrowser {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
-
     private String name;
-
-    private String group;
+    private String version;
 
     public Integer getId() {
         return id;
@@ -31,11 +29,11 @@ public class Os {
         this.name = name;
     }
 
-    public String getGroup() {
-        return group;
+    public String getVersion() {
+        return version;
     }
 
-    public void setGroup(String group) {
-        this.group = group;
+    public void setVersion(String version) {
+        this.version = version;
     }
 }

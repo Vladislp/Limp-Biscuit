@@ -14,13 +14,13 @@ import java.util.Locale;
 
 @Configuration
 public class WebMvcConfig implements WebMvcConfigurer {
-
     @Bean
     public LocaleResolver localeResolver() {
         SessionLocaleResolver slr = new SessionLocaleResolver();
         slr.setDefaultLocale(Locale.ENGLISH);
         return slr;
     }
+
     @Bean
     public LocaleChangeInterceptor localeChangeInterceptor() {
         LocaleChangeInterceptor lci = new LocaleChangeInterceptor();
@@ -28,10 +28,9 @@ public class WebMvcConfig implements WebMvcConfigurer {
         return lci;
     }
 
-
     @Bean(name = "messageSource")
-    public MessageSource getMessageResource()  {
-        ReloadableResourceBundleMessageSource messageResource= new ReloadableResourceBundleMessageSource();
+    public MessageSource getMessageResource() {
+        ReloadableResourceBundleMessageSource messageResource = new ReloadableResourceBundleMessageSource();
         messageResource.setBasename("classpath:messages");
         messageResource.setDefaultEncoding("UTF-8");
         return messageResource;

@@ -12,7 +12,6 @@ import java.util.Properties;
 public class MailConfig {
     @Value("${email.host}")
     private String host;
-
     @Value("${email.port}")
     private Integer port;
     @Value("${email.username}")
@@ -42,5 +41,4 @@ public class MailConfig {
         properties.setProperty("mail.debug", "false");
         return properties;
     }
-
 }
