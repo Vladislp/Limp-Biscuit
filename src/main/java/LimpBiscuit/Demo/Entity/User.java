@@ -1,4 +1,4 @@
-package LimpBiscuit.Demo.Entities;
+package LimpBiscuit.Demo.Entity;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;

@@ -1,7 +1,7 @@
 package LimpBiscuit.Demo.Controller;
 
-import LimpBiscuit.Demo.Entities.DBFile;
-import LimpBiscuit.Demo.Services.DBFileStorageService;
+import LimpBiscuit.Demo.Entity.DBFile;
+import LimpBiscuit.Demo.Service.DBFileStorageService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

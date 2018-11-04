@@ -1,6 +1,6 @@
 package LimpBiscuit.Demo.Config;
 
-import LimpBiscuit.Demo.Services.HttpHandshakeInterceptor;
+import LimpBiscuit.Demo.Service.HttpHandshakeInterceptor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.messaging.simp.config.MessageBrokerRegistry;

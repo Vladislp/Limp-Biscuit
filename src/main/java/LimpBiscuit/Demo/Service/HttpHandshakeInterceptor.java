@@ -1,4 +1,4 @@
-package LimpBiscuit.Demo.Services;
+package LimpBiscuit.Demo.Service;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

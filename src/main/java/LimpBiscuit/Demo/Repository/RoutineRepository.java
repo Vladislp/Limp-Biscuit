@@ -1,6 +1,6 @@
-package LimpBiscuit.Demo.Repositories;
+package LimpBiscuit.Demo.Repository;
 
-import LimpBiscuit.Demo.Entities.Routine;
+import LimpBiscuit.Demo.Entity.Routine;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

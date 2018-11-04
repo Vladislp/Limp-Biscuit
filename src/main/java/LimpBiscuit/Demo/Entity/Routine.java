@@ -1,4 +1,4 @@
-package LimpBiscuit.Demo.Entities;
+package LimpBiscuit.Demo.Entity;
 
 import org.hibernate.annotations.Type;
 

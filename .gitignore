@@ -28,3 +28,5 @@ target
 
 ### Ignore config files ###
 src/main/resources/application.properties
+
+.DS_Store

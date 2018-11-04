@@ -1,7 +1,7 @@
 package LimpBiscuit.Demo.Controller;
 
-import LimpBiscuit.Demo.Entities.Routine;
-import LimpBiscuit.Demo.Repositories.RoutineRepository;
+import LimpBiscuit.Demo.Entity.Routine;
+import LimpBiscuit.Demo.Repository.RoutineRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.oauth2.provider.OAuth2Authentication;
 import org.springframework.stereotype.Controller;

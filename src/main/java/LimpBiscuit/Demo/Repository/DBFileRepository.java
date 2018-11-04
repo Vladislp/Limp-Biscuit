@@ -1,6 +1,6 @@
-package LimpBiscuit.Demo.Repositories;
+package LimpBiscuit.Demo.Repository;
 
-import LimpBiscuit.Demo.Entities.DBFile;
+import LimpBiscuit.Demo.Entity.DBFile;
 import org.springframework.data.repository.Repository;
 
 import java.util.List;

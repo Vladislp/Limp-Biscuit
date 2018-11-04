@@ -1,7 +1,7 @@
-package LimpBiscuit.Demo.Repositories;
+package LimpBiscuit.Demo.Repository;
 
-import LimpBiscuit.Demo.Entities.Routine;
-import LimpBiscuit.Demo.Entities.User;
+import LimpBiscuit.Demo.Entity.Routine;
+import LimpBiscuit.Demo.Entity.User;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
