@@ -1,7 +1,5 @@
 package LimpBiscuit.Demo.Controller;
 
-import LimpBiscuit.Demo.Repository.RoutineRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
@@ -9,9 +7,6 @@ import javax.servlet.http.HttpServletRequest;
 
 @Controller
 public class IndexController {
-    @Autowired
-    private RoutineRepository routineRepository;
-
     @GetMapping(value = {"/", "/index"})
     public String index() {
 
@@ -35,10 +30,9 @@ public class IndexController {
         return "Line";
     }
 
-    @GetMapping("/logoutt")
+    @GetMapping("/logout")
     public String logout(HttpServletRequest request) {
         request.getSession(true).invalidate();
-
-        return "Index";
+        return "redirect:/";
     }
 }

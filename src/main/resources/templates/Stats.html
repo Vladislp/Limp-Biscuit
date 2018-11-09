@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+
+<html th:lang="#{language_code}" xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="fragments/Head :: head"></head>
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"
+            integrity="sha256-oSgtFCCmHWRPQ/JmR4OoZ3Xke1Pw4v50uh6pLcu+fIc=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+<nav th:replace="fragments/Navigation :: navigation"></nav>
+
+<div class="container margin-tb">
+    <canvas id="operating-systems"></canvas>
+    <canvas id="browsers"></canvas>
+    <canvas id="dates"></canvas>
+
+    <div th:text="#{osStats}"></div>
+</div>
+
+<script src="/static/js/charts.js"></script>
+</body>
+</html>
