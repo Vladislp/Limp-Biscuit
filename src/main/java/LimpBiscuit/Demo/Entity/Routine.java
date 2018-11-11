@@ -25,7 +25,6 @@ public class Routine {
     @NotNull
     @Temporal(TemporalType.DATE)
     private Date date;
-    //    @NotNull
     @ManyToOne
     private User user;
 

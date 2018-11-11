@@ -3,7 +3,6 @@
 <html th:lang="#{language_code}" xmlns:th="http://www.thymeleaf.org">
 
 <head th:replace="fragments/Head :: head">
-    <title> Routine starter Home </title>
     <meta name="description" content="Routine starter. Scheduling is the art of planning your activities so that you can achieve your goals and priorities in the time you have available.
 Create your routines.">
     <meta name="keywords" content="Routine, Schedule, planning, organized, goals, achieve, create">
@@ -14,7 +13,7 @@ Create your routines.">
 <nav th:replace="fragments/Navigation :: navigation"></nav>
 
 
-<button type="button" onclick="myFunction()">Show email</button>
+<button class="btn btn-danger btn-sm" type="button" onclick="myFunction()">Show email</button>
 
 <script>
     function myFunction() {

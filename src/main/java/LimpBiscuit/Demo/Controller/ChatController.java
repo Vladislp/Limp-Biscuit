@@ -14,7 +14,7 @@ public class ChatController {
     public String index(HttpServletRequest request, Model model, OAuth2Authentication authentication) {
         LinkedHashMap<String, Object> properties = (LinkedHashMap<String, Object>) authentication.getUserAuthentication().getDetails();
         String email = String.valueOf(properties.get("email"));
-        String username = email.substring(0, 6) + "*****";
+        String username = email.split("@")[0];
 
         model.addAttribute("username", username);
 

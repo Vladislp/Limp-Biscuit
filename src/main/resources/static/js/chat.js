@@ -11,7 +11,7 @@ var username = null;
 
 
 function connect() {
-    username = document.querySelector('#username').innerText.trim();
+    username = document.querySelector('#messageForm').getAttribute("data-username").trim();
 
     var socket = new SockJS('/ws');
     stompClient = Stomp.over(socket);
@@ -50,17 +50,18 @@ function sendMessage(event) {
             content: messageInput.value,
             type: 'CHAT'
         };
+
         stompClient.send("/app/chat.sendMessage", {}, JSON.stringify(chatMessage));
         messageInput.value = '';
     }
+
     event.preventDefault();
 }
-
 
 function onMessageReceived(payload) {
     var message = JSON.parse(payload.body);
 
-    var messageElement = document.createElement('li');
+    var messageElement = document.createElement('div');
 
     if (message.type === 'JOIN') {
         messageElement.classList.add('event-message');
