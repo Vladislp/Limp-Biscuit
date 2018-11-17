@@ -39,7 +39,7 @@ Create your routines.">
 
     <button class="btn" th:classappend="${#execInfo.processedTemplateName == 'Create'} ? 'active' : ''">
         <a class="btn btn-danger btn-lg" href="/create">
-            <em class="far fa-plus-square" th:text="#{createroutine}"></em>
+            <em class="far fa-plus-square"></em><span th:text="#{createroutine}"></span>
         </a>
     </button>
 

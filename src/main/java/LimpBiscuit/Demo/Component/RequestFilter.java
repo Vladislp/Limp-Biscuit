@@ -36,8 +36,6 @@ public class RequestFilter implements Filter {
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
         chain.doFilter(request, response);
 
-        System.out.println("Hello");
-
         HttpServletRequest servletRequest = (HttpServletRequest) request;
 
         String header = servletRequest.getHeader("User-Agent");

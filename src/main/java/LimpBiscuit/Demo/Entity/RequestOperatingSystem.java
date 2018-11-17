@@ -11,6 +11,9 @@ public class RequestOperatingSystem {
     private String name;
     private String family;
 
+    public RequestOperatingSystem() {
+    }
+
     public Integer getId() {
         return id;
     }
