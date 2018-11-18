@@ -8,13 +8,7 @@
 
 <nav th:replace="fragments/Navigation :: navigation"></nav>
 
-<script>
-    $(document).ready(function () {
-        $("button").click(function () {
-            $("p").hide();
-        });
-    });
-</script>
+<script src="/static/js/contact.js"></script>
 
 <div class="container margin-tb" id="div1"><h3 th:text="#{our_contact}"></h3>
     <p th:text="#{contact_info}"></p>
