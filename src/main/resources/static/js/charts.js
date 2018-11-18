@@ -1,7 +1,7 @@
 // http://nikolay.rocks/2015-10-29-rainbows-generator-in-javascript
 function sin_to_hex(i, phase, size) {
     var sin = Math.sin(Math.PI / size * 2 * i + phase);
-    var int = Math.floor(sin * 127) + 128;
+    var int = 128 + Math.floor((Math.floor(sin * 127) + 128) / 2);
     var hex = int.toString(16);
 
     return hex.length === 1 ? "0" + hex : hex;
@@ -38,10 +38,12 @@ function drawBarChart(id, histogram) {
         var blue = sin_to_hex(i, Math.PI * 2 / 3, data.length);
         var green = sin_to_hex(i, 2 * Math.PI * 2 / 3, data.length);
 
-        hoverBackgroundColors[i] = "#" + red + green + blue + "88";
-        backgroundColors[i] = "#" + red + green + blue + "44";
+        hoverBackgroundColors[i] = "#" + red + green + blue + "26";
+        backgroundColors[i] = "#" + red + green + blue + "22";
         borderColors[i] = "#" + red + green + blue;
     }
+
+    console.log(backgroundColors);
 
     if (data.length > 0) {
         new Chart(context, {
@@ -52,32 +54,54 @@ function drawBarChart(id, histogram) {
                     data: data,
                     hoverBackgroundColor: hoverBackgroundColors,
                     backgroundColor: backgroundColors,
-                    borderColor: borderColors
+                    borderColor: borderColors,
+                    borderWidth: 1
                 }]
             },
             options: {
                 legend: {
-                    display: false
+                    display: false,
+                    labels: {
+                        fontColor: "rgba(255, 255, 255, 0.5)"
+                    }
                 },
                 scales: {
                     yAxes: [{
+                        gridLines: {
+                            display: false,
+                            color: "rgba(255, 255, 255, 0.5)"
+                        },
                         ticks: {
+                            fontColor: "rgba(255, 255, 255, 0.5)",
                             beginAtZero: true
                         }
                     }],
                     xAxes: histogram ? [{
+                        gridLines: {
+                            display: false,
+                            color: "rgba(255, 255, 255, 0.5)"
+                        },
                         type: 'time',
+                        ticks: {
+                            fontColor: "white"
+                        },
                         time: {
                             unit: "minute"
                         },
                         offset: true
-                    }] : [{}]
+                    }] : [{
+                        gridLines: {
+                            display: false,
+                            color: "rgba(255, 255, 255, 0.5)"
+                        },
+                        ticks: {
+                            fontColor: "white"
+                        }
+                    }]
                 }
             }
         });
     }
-
-    console.log(data);
 }
 
 drawBarChart("operating-systems", false);
