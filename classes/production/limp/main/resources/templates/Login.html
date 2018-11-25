@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<html th:lang="#{language_code}" xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="fragments/Head :: head"></head>
+
+<body>
+
+<nav th:replace="fragments/Navigation :: navigation"></nav>
+
+<div class="container margin-tb">
+    <h1 class="mb-4" th:text="#{log_in}"></h1>
+
+    <form action="/index.html" method="post">
+        <div class="form-group">
+            <label for="email">Email aadress</label>
+            <input type="email" class="form-control" id="email" aria-describedby="emailHelp"
+                   placeholder="Enter email" required>
+            <small id="emailHelp" class="form-text text-muted">Put you email here.</small>
+
+            <label for="password">Password</label>
+            <input type="password" class="form-control" id="password" placeholder="Enter a password" required>
+        </div>
+
+        <button type="submit" class="btn btn-danger" th:text="#{login_button}"></button>
+
+
+    </form>
+</div>
+
+</body>
+
+</html>

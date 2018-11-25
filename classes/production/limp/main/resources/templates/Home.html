@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<html th:lang="#{language_code}" xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="fragments/Head :: head"></head>
+
+<body>
+<nav th:replace="fragments/Navigation :: navigation"></nav>
+
+<script src="/static/js/showEmail.js"></script>
+
+
+<div class="container margin-tb">
+    <div class="btn-header">
+        <a class="btn btn-danger upload-btn" href="/create">
+            <i class="far fa-plus-square"></i> <span th:text="#{createroutine}"></span>
+        </a>
+
+        <button class="btn btn-danger" type="button" onclick="myFunction()">
+            <i class="fas fa-at"></i> Show email
+        </button>
+    </div>
+
+    <table class="table table-dark">
+        <thead>
+        <tr>
+            <th> Title</th>
+            <th> Text</th>
+            <th> Color</th>
+            <th> Done</th>
+            <th> Date</th>
+            <th> Email</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:if="${routines.empty}">
+            <td colspan="2"> No routines yet</td>
+        </tr>
+        <tr th:each="routine : ${routines}">
+            <td><span th:text="${routine.title}"></span></td>
+            <td><span th:text="${routine.text}"></span></td>
+            <td><span th:text="${routine.color}"></span></td>
+            <td><span th:text="${routine.done}"></span></td>
+            <td><span th:text="${routine.date}"></span></td>
+            <td><span th:id="'email-'+${routine.id}"> not loaded </span></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+
+</body>
+</html>

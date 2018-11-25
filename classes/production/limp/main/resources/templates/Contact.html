@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+
+<html th:lang="#{language_code}" xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="fragments/Head :: head"></head>
+
+<body>
+
+<nav th:replace="fragments/Navigation :: navigation"></nav>
+
+<script src="/static/js/contact.js"></script>
+
+<div class="container margin-tb" id="div1"><h3 th:text="#{our_contact}"></h3>
+    <p th:text="#{contact_info}"></p>
+
+    <button>Hide extra info</button>
+</div>
+
+
+</body>
+</html>
