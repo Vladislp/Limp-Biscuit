@@ -44,7 +44,7 @@ public interface RequestRepository extends CrudRepository<Request, Long> {
     List<StringAndNumber> getBrowserStats();
 
     @Query(value = "SELECT\n" +
-            "    DATE_FORMAT(date, '%Y-%m-%dT%H') AS string,\n" +
+            "    DATE_FORMAT(date, '%Y-%m-%dT%H:00:00Z') AS string,\n" +
             "    count(*) AS number\n" +
             "FROM\n" +
             "   request\n" +

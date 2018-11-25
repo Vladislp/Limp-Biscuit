@@ -86,7 +86,9 @@ function drawBarChart(id, histogram) {
                             fontColor: "white"
                         },
                         time: {
-                            unit: "minute"
+                            unit: "hour",
+                            tooltipFormat: 'DD MMM HH:00'
+
                         },
                         offset: true
                     }] : [{
