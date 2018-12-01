@@ -10,7 +10,13 @@ import java.util.List;
 public interface RoutineRepository extends CrudRepository<Routine, Long> {
     <S extends Routine> S save(S entity);
 
+//    <S extends Routine> S delete(S entity);
+
     List<Routine> findAll();
 
     List<Routine> findByEmail(String email);
+
+    Routine findById(int id);
+
+    void removeById(int id);
 }

@@ -8,8 +8,10 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.oauth2.provider.OAuth2Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.transaction.Transactional;
 import java.util.LinkedHashMap;
 import java.util.List;
 
@@ -38,6 +40,19 @@ public class RoutineController {
 //        System.out.println(userRepository.findUsersNotDoneRoutines());
 
         return modelAndView;
+    }
+
+    @GetMapping("/deleteroutine/{id}")
+    public String delete(@PathVariable int id) {
+        Routine r = routineRepository.findById(id);
+
+        try {
+            r.getId();
+            routineRepository.delete(r);
+        } catch (Exception e) {
+            System.out.println("A\nA\nA\nAAAAAAAAAA");
+        }
+        return "redirect:/home";
     }
 
     @GetMapping("/api/routines")
