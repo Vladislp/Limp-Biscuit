@@ -30,3 +30,5 @@ target
 src/main/resources/application.properties
 
 .DS_Store
+
+classes
