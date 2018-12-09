@@ -87,7 +87,18 @@ function drawBarChart(id, histogram) {
                         },
                         time: {
                             unit: "hour",
-                            tooltipFormat: 'DD MMM HH:00'
+                            tooltipFormat: 'DD MMM HH:00',
+                            displayFormats: {
+                                'millisecond': 'DD MMM HH:00',
+                                'second': 'DD MMM HH:00',
+                                'minute': 'DD MMM HH:00',
+                                'hour': 'DD MMM HH:00',
+                                'day': 'DD MMM HH:00',
+                                'week': 'DD MMM HH:00',
+                                'month': 'DD MMM HH:00',
+                                'quarter': 'DD MMM HH:00',
+                                'year': 'DD MMM HH:00',
+                            }
 
                         },
                         offset: true

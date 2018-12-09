@@ -23,7 +23,7 @@ public interface RequestRepository extends CrudRepository<Request, Long> {
             "ON\n" +
             "    request.operating_system_id = os.id\n" +
             "GROUP BY\n" +
-            "    os.id\n" +
+            "    os.name\n" +
             "ORDER BY\n" +
             "    number DESC", nativeQuery = true)
     List<StringAndNumber> getOperatingSystemStats();
@@ -38,7 +38,7 @@ public interface RequestRepository extends CrudRepository<Request, Long> {
             "ON\n" +
             "    request.browser_id = browser.id\n" +
             "GROUP BY\n" +
-            "    browser.id\n" +
+            "    browser.name\n" +
             "ORDER BY\n" +
             "    number DESC", nativeQuery = true)
     List<StringAndNumber> getBrowserStats();
